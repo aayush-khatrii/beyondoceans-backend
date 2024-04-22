@@ -3,7 +3,16 @@
   "version": "1.0.50",
   "module": "src/index.js",
   "dependencies": {
-    "elysia": "latest"
+    "@aws-sdk/client-dynamodb": "^3.540.0",
+    "@aws-sdk/client-ses": "^3.540.0",
+    "@aws-sdk/lib-dynamodb": "^3.540.0",
+    "@aws-sdk/util-dynamodb": "^3.540.0",
+    "@elysiajs/jwt": "^1.0.2",
+    "crypto": "^1.0.1",
+    "elysia": "latest",
+    "joi": "^17.12.2",
+    "libphonenumber-js": "^1.10.58",
+    "uuid": "^9.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
