@@ -2,14 +2,20 @@ import { Elysia } from "elysia";
 import router from "./routes";
 import { jwt } from '@elysiajs/jwt'
 import { ErrorHandler } from "../errors/ErrorHandler"
+import { cors } from "@elysiajs/cors"
+import { lambda } from 'elysia-lambda'
+
 
 const app = new Elysia({ prefix: '/devstag/v1' })
+
+
+app.use(lambda())
 
 app.use(
   jwt({
       name: 'accessTokenjwt',
       secret: Bun.env.JWT_ACCESS_TOKEN_SECRET,
-      exp: '1h'
+      exp: '7d'
   })
 )
 app.use( 
@@ -26,7 +32,7 @@ app.use(
     exp: '7d'
 }))
 
-router(app)
+
 
 app.error({CUSTOM_ERROR : ErrorHandler})
 app.onError(({error, set}) => {
@@ -48,7 +54,39 @@ app.onError(({error, set}) => {
     return errData
 })
 
-app.listen(3000);
+app.onRequest(({request, set}) => {
+  const dataHead = request.headers.toJSON() 
+
+  const allowedDomains = [
+    "http://localhost:3000/",
+    "https://www.beyondoceans.in/",
+    "http://192.168.1.108:3000/",
+    "http://localhost:5123/"
+  ];
+  
+  if((!dataHead.referer && (!dataHead.userappdomain || dataHead.userappdomain !== "software")) || (dataHead.referer && !allowedDomains.includes(dataHead.referer))){
+    set.status = 401
+    return { ststus:"Unauthorized Access", ststusCode:"401" }
+  }
+
+    set.headers = {
+        "Access-Control-Allow-Origin": Bun.env.ENVR === "PROD" ? "https://www.beyondoceans.in" : Bun.env.SOFT_ENV === "PROD" ? "http://localhost:3000" : "http://localhost:5123",
+        "Access-Control-Allow-Headers": "content-type, *, userappdomain",
+        "Access-Control-Allow-Credentials": "true",
+        "Origin": Bun.env.ENVR === "PROD" ? "https://www.beyondoceans.in" : Bun.env.SOFT_ENV === "PROD" ? "http://localhost:3000" : "http://localhost:5123",
+    }
+}
+)
+
+app.options("/*", ({set}) => {
+  set.status = 200
+})
+
+
+router(app)
+
+
+app.listen(3300);
 
 
 console.log(

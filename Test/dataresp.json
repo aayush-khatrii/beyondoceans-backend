@@ -1,0 +1,47 @@
+[
+  {
+    "data": {
+      "token": "dGVzdGFnZW50QHhnZW5tZWRpYS5jb20tdGVzdEAxMjM=",
+      "agent_data": {
+        "agent_name": "XGENMEDIA TEST AGENT TEST",
+        "business_name": "XGENMEDIA TOURS AND TRAVELS",
+        "business_email": "support@xgenmedia.comxxxx",
+        "agent_contact": "9831026611000"
+      }
+    },
+    "msg": "Succeffully Login",
+    "code": "200"
+  },
+  {
+    "data": {
+      "username": "your username",
+      "password": "your password"
+    }
+  },
+  {
+    "data": {
+      "trip_type": "single_trip",
+      "from_location": "1",
+      "travel_date": "2024-05-28",
+      "no_of_passenger": "2",
+      "to_location": "2"
+    }
+  },
+  {
+    "TatalTrv": "num",
+    "Adult": [
+      {
+        "Name": "awd",
+        "Age": "awd",
+        "Nationality": "awd"
+      }
+    ],
+    "Infat": [
+      {
+        "Name": "awd",
+        "Age": "awd",
+        "Nationality": "awd"
+      }
+    ]
+  }
+]

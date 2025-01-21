@@ -6,6 +6,12 @@ class hashService{
         .update(data)
         .digest('hex');
     }
+
+    hashPaymentToken(data){
+        return crypto.createHash('sha256')
+        .update(data)
+        .digest('hex');
+    }
 }
 
 export default new hashService();

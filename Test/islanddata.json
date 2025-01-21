@@ -1,0 +1,10 @@
+{
+  "data": [
+    { "id": "1", "title": "Port Blair", "code": "PB" },
+    { "id": "2", "title": "Swaraj Deep(Havelock) ", "code": "SW(HL)" },
+    { "id": "3", "title": "Shaheed Deep(Neil island) ", "code": "SH(NL)" },
+    { "id": "4", "title": "Baratang", "code": "BT" }
+  ],
+  "msg": "Sectors Successfully listed",
+  "code": "200"
+}

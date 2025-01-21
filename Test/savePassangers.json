@@ -1,0 +1,55 @@
+[
+  {
+    "data": {
+      "passenger": {
+        "1": {
+          "title": "MR",
+          "name": "Bivas Sen",
+          "age": "32",
+          "sex": "male",
+          "nationality": "indian",
+          "fcountry": "",
+          "fpassport": "",
+          "fexpdate": ""
+        },
+        "2": {
+          "title": "MR",
+          "name": "Bipul Sen",
+          "age": "6",
+          "sex": "male",
+          "nationality": "indian",
+          "fcountry": "",
+          "fpassport": "",
+          "fexpdate": ""
+        }
+      },
+      "c_name": "test",
+      "c_mobile": "8961217535",
+      "c_email": "newton@xgenmedia.com",
+      "p_contact": "123456",
+      "no_of_passenger": "2",
+      "schedule_id": "600",
+      "travel_date": "2024-05-27",
+      "class_id": "14",
+      "fare": "1725",
+      "tc_check": true
+    }
+  },
+  {
+    "data": {
+      "booking_id": 2723,
+      "schedule_id": "600",
+      "class_id": "14",
+      "travel_date": "2024-05-27",
+      "return_booking_id": 2724,
+      "return_schedule_id": "619",
+      "return_class_id": "14",
+      "return_travel_date": "2024-05-27",
+      "booking_type": "B2C",
+      "commision_type": "percentage",
+      "commision_amount": "20.00"
+    },
+    "msg": "Passenger Details Saved",
+    "code": "200"
+  }
+]

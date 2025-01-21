@@ -1,0 +1,9 @@
+deploy: src/index.js
+name: bo-live-v1
+region: ap-south-1
+memory: "256"
+arch: arm64
+description: no
+role: arn:aws:iam::891377180589:role/LambdaElysiaDeploy
+layers:
+  - arn:aws:lambda:ap-south-1:891377180589:layer:bun:88
